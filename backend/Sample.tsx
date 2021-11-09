@@ -1,18 +1,6 @@
 // IGNORE IMPORT ERRORS
 const foodHallQueries: QueryResolvers = {
   getSearchItems: async (_, args) => {
-    // Things I would pick out here:
-    // 1. The commented console log should be removed
-    // 2. I would change/simplify the match to the following:
-    // const match = {
-    //   active: { $eq: true },
-    //   deleted: { $eq: false },
-    //   ...(args.filters.includes('vegan') && { vegan: { $eq: true } }),
-    //   ...(args.filters.includes('vegetarian') && { vegetarian: { $eq: true } }),
-    //   ...(args.filters.includes('glutenFree') && { glutenFree: { $eq: true } }),
-    // }
-    // This would remove the veganMath, vegetarianMatch, and glutenFreeMatch and only add them if needed rather than always adding them unnecessarily
-
     let veganMatch: unknown = { $limit: 1000 };
     let vegetarianMatch: unknown = { $limit: 1000 };
     let glutenfreeMatch: unknown = { $limit: 1000 };
@@ -81,9 +69,6 @@ const foodHallQueries: QueryResolvers = {
       },
     ]);
   },
-  // Things I would pick out here:
-  // 1. This is a key that SHOULD NOT be stored in version control and should not be in the code like this. Really we shouldn't even make the key accessible through our API like this (it is a workaround for now).
-  // This is most important thing I would look from from this code sample.
   getPlacesKey: async (_, _args) => {
     return "AIzaSyBVyArZ3sJVx0tKhXFchG73vYP_tww2Nxs";
   },

@@ -1,11 +1,3 @@
-// IGNORE IMPORT ERRORS
-
-// Mainly here what I would want to see is them talk about slitting this into smaller components. I.e. the CardHeader, CardContent and CardActions could all be split out and that would be a good start.
-// With this, I would ask how the would manage the state of the parent and children components if separated into components (looking for them to talk about the context API or a lib like Redux or Mobx).
-// It would also be a good point to ask them how state is passed from the parent to child, without using a state management tool (looking for them to mention props).
-// It would also be good to ask them to talk about this line: `const { conceptID } = useConcept();`. Seeing if they would speculate on what is happening here and why. (This is a hook that is using a the context API to store global state, I would look for them to have knowledge of hooks as well as some knowledge of the context API)
-// Also, There are some commented pieces of code that could be removed.
-
 const schema = yup.object().shape({
   name: yup.string().min(1, "Please enter a name for the item."),
   shortDesc: yup

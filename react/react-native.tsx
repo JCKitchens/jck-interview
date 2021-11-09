@@ -1,14 +1,3 @@
-/*
-Things to look for:
-1. const [loading, setLoading] = useState(false) along with the useEffect are not necessary, simply using isLoading from the query would be a better option.
-2. const [activeMarketItems, setActiveMarketItems] = useState([]); activeMarketItems is never actually used in this file.
-3. <SafeAreaView/> and <View/> should be swapped. The entire screen should be wrapped in <SafeAreaView/>
-4. The first category?.items mapping on line ____ is unnecessary.
-5. route.params.section.name type should be a string, not any
-6. const {admin} = useAuth() is never used and should be removed
-7. This file could be broken down into smaller components.
-8. navigation.navigate("MarketItem", { item: item,}) could be simplified to navigation.navigate("MarketItem", {item})
-*/
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
